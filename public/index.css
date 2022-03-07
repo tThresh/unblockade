@@ -16,13 +16,13 @@
     text-align: center;
 }
 
-input[type=submit]{
+button{
   text-decoration: none;
   background-color: #FF5E5E;
   color: white;
   padding: 10px;
   border-radius: 0px 50px 50px 0px;
-  padding: 10px 15px 10px 15px;
+  padding: 10px 20px 10px 15px;
   font-size: 25px;
   cursor: pointer;
   font-weight: 400;
@@ -39,4 +39,8 @@ input[type=text]{
 
 img{
   width: 483px;
+}
+
+button i{
+  background-color: #FF5E5E;
 }
