@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unblockade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="https://kit.fontawesome.com/7fba371ce5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <img id="logo" src="assets/unblkade.svg">
+
+      <form action="no-js" method="get" id="unblocker-form">
+        <p>
+          <input type="text" id="url" name="url" autofocus="autofocus" placeholder="Insert URL here"/>
+          <button type="submit" value="Search">
+            <i class="fas fa-search"></i>
+          </button>
+
+        </p>
+
+      </form>
+
+    </div>
+
+      <button type="submit" value="About" id="abtbutton">About</button>
+
+  <div class="modalabt" id="abtmodal">
+    <div class="modal-contentabt">
+    <span id="close"><i class="fa-solid fa-xmark"></i></span>
+    <h2>About Unblockade</h2>
+    <p>Unblockade is a website made for unblocking certain websites that may be blocked in a country, place, or state. </p>
+    <h2>Legal</h2>
+    <p>Any inconvenience you are caused by my website, shall not be held against me. If you ever get caught for using this website in class, I am not responsible for it.</p>
+  </div>
+</div>
+
+	<script>
+		function $(id){
+			return document.getElementById(id);
+		}
+
+		$('unblocker-form').onsubmit = function(){
+			var url = $('url').value;
+			if(url.substr(0,4) != "http"){
+				url = "http://" + url;
+			}
+			window.location = location.protocol + '//' + location.host + '/proxy/' + url;
+			return false;
+		};
+
+		function checkError(){
+			var search = window.location.search;
+			var start = search.indexOf('error=');
+			if(start > -1){
+				var stop = search.indexOf('&', start);
+				if(stop == -1){ stop = undefined; }
+				// +6 for "error="
+				var err = search.substr(start+6, stop);
+                var $error = $('error');
+				$error.innerText = $error.textContent = decodeURIComponent(err);
+				$error.style.display = "block";
+			}
+		}
+
+		window.onload = function() {
+			$('url').focus();
+			checkError();
+		}
+
+    // Get the modal
+var modal = document.getElementById("abtmodal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("abtbutton");
+
+// Get the <span> element that closes the modal
+var span = document.getElementById("close");
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+	</script>
+</body>
+</html>

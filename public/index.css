@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  background-color: #2b2427;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+}
+
+form p button{
+  text-decoration: none;
+  background-color: #FF5E5E;
+  color: white;
+  padding: 10px;
+  border-radius: 0px 50px 50px 0px;
+  padding: 10px 20px 10px 15px;
+  font-size: 25px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+input[type=text]{
+  text-decoration: none;
+  background-color: #1e191b;
+  padding: 10px 15px 10px 15px;
+  border-radius: 50px 0px 0px 50px;
+  color: white;
+  font-size: 25px;
+}
+
+img{
+  width: 483px;
+}
+
+button i{
+  background-color: #FF5E5E;
+}
+
+#abtbutton{
+  color: #57484e;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: .5s;
+}
+
+#abtbutton:hover{
+  color: white;
+  transform: scale(1.1);
+}
+
+.modalabt{
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 5; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #2b2427;
+  background-color: rgba(0,0,0,0.4)
+}
+
+.modal-contentabt {
+  background-color: #2b2427;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 15px;
+  border-radius: 20px;
+  width: 25rem; /* Could be more or less, depending on screen size */
+  color: white;
+}
+
+.modal-contentabt i{
+  font-size: 2rem;
+  cursor: pointer;
+}
